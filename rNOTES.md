@@ -57,6 +57,7 @@
 `knex seed:make 001-init`
 
 - :open_file_folder: seeds
+
   - [001-init.js](database/seeds/001-init.js)
 
 - :eyes: brush up on seeds :eyes:
@@ -79,3 +80,30 @@
   - [users-model.js](api/users/users-model.js)
 
 ---
+
+### Set up Authentication
+
+:open_file_folder: api
+
+- :open_file_folder: auth
+
+  - [auth-router.js](api/auth/auth-router.js)
+    - /register
+    - /login
+    - /logout
+
+- :open_file_folder: middleware --> [protected.js](api/middleware/protected.js)
+
+- :open_file_folder: config
+  - not too sure how about naming conventions
+  - just pulled it out of server.js from today's guided project
+  - [session-config.js](api/config/session-config.js)
+    - [express-sessions](https://www.npmjs.com/package/express-session)
+    - [connect-session-knex](https://www.npmjs.com/package/connect-session-knex)
+
+[server.js](api/server.js)
+
+- bring it all together
+  - add `api/auth` route
+  - protect `/api/users` route
+  - sessionConfiguration
